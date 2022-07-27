@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+body {
+  background-color: #131722 !important;
+  color: white;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Montserrat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+label , h4 {
+  color: white;
+}
+
+h2 {
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+input {
+  background-color: transparent !important;
+  color: white !important;
+}
+.navbar {
+  z-index: 9999;
+  position: fixed;
+  background-color: transparent;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 2px;
+  background-color: rgba(128, 128, 128, 0.332);
+  top: 100%;
+}
+.title::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 2px;
+  background-color: rgba(128, 128, 128, 0.332);
+  bottom: 110%;
+
+}
+.logout {
+  cursor: pointer;
+}

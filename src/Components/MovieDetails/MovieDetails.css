@@ -1,0 +1,67 @@
+.movieDetails {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+}
+.movieDetails , .movieDetails img , .movieDetails h2 , .movieDetails h4 , .movieDetails p , span , button {
+  position: relative;
+  z-index: 999;
+}
+.movieDetails::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.434908997778799) 4%, rgba(0, 0, 0, 0.7430322470785189) 60%, rgba(0, 0, 0, 0.9699230033810399) 100%);
+}
+
+.movieDetails img{
+  border-radius: 20px;
+  margin-top: 2rem;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+span {
+  text-align: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.container .item h2{
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+  
+}
+
+
+p , .item h4 {
+  background: linear-gradient(38deg, rgba(247, 247, 247, 1) 4%, rgba(165, 175, 156, 1) 60%, rgba(247, 247, 247, 1) 100%);
+      -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.4rem;
+}
+
+.layerTrailer {
+  z-index: 9999999999;
+  background-color: rgba(0, 0, 0, 0.388);
+  display: none;
+}
+.claseTrailer {
+  cursor: pointer;
+}
+
+.container span {
+  background: linear-gradient(to right, #30d0d078 0%, #33086783 100%);
+}
