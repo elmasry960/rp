@@ -78,7 +78,7 @@ function App() {
           }
         />
         <Route
-          path="tvdetails"
+          path="/tvdetails"
           element={
             <TestingRoute>
               {" "}
@@ -90,7 +90,7 @@ function App() {
         </Route>
 
         <Route
-          path="moviemetails"
+          path="/moviemetails"
           element={
             <TestingRoute>
               {" "}
