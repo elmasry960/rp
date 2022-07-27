@@ -9,7 +9,7 @@ export default function Navbar({ crrUser, clrUser }) {
     <>
       <nav className="navbar navbar-expand-lg bg-transparent navbar-dark top-0 w-100">
         <div className="container-fluid">
-          <NavLink data-aos="fade-right" className="navbar-brand" to="pr">
+          <NavLink data-aos="fade-right" className="navbar-brand" to="rp">
             Noxe
           </NavLink>
           <button
