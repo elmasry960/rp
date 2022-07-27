@@ -61,7 +61,7 @@ export default function Home() {
       </div>
       {tvShow.map((tv , indx)=> <div key={indx} className='col-md-2 mb-3' data-aos="fade-up"
      data-aos-duration="3000">
-        <Link className='text-decoration-none' to={`tvdetails/${tv.id}`}>
+        <Link className='text-decoration-none' to={`/tvdetails/${tv.id}`}>
           <div className='item'>
           <figure>
             <img className='w-100' src={"https://image.tmdb.org/t/p/w500/"+tv.poster_path} />

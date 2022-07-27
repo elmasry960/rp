@@ -18,6 +18,7 @@ export default function MovieDetails() {
 
     let {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`)
     setMovieDetails(data);
+    document.title = `Movie ${data.original_title}`;
   }
 
   async function getTrailer(){
@@ -26,7 +27,7 @@ export default function MovieDetails() {
       `https://api.themoviedb.org/3/movie/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`);
       
       setTrailer(data); 
-
+    
     }
     
     console.log(trailer);

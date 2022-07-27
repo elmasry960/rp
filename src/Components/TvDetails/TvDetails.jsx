@@ -13,6 +13,8 @@ export default function TvDetails() {
     let {data} = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`)
 
     setTvDetails(data);
+    document.title = `Tv ${data.name}`;
+
 
   }
 

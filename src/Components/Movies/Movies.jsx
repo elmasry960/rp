@@ -9,6 +9,8 @@ export default function Movies() {
 
     let {data} = await Axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=eba8b9a7199efdcb0ca1f96879b83c44")
     getMovies(data.results);
+    document.title = "Movie";
+
   }
 
   useEffect(()=>{

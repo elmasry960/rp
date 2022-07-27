@@ -35,6 +35,7 @@ function App() {
   function decodeToken(){
     let user = jwtDecode( localStorage.getItem("tkn") )
     setCurrentUser(user)
+
   }
 
 
@@ -61,7 +62,7 @@ function App() {
         <Route path="rp" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route
-          path="movies"
+          path="movies" title="Movie"
           element={
             <TestingRoute>
               <Movies />{" "}
@@ -69,7 +70,7 @@ function App() {
           }
         />
         <Route
-          path="tv"
+          path="tv" title="Tv Show"
           element={
             <TestingRoute>
               {" "}

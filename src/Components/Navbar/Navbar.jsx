@@ -9,7 +9,7 @@ export default function Navbar({crrUser , clrUser}) {
     <>
       <nav className="navbar navbar-expand-lg bg-transparent navbar-dark top-0 w-100">
         <div className="container-fluid">
-          <NavLink data-aos="fade-right" className="navbar-brand" to="pr">
+          <NavLink data-aos="fade-right" className="navbar-brand" to="rp">
             Noxe
           </NavLink>
           <button
@@ -82,7 +82,10 @@ export default function Navbar({crrUser , clrUser}) {
                 data-aos-duration="2000"
                 className="nav-item mx-2"
               >
-                <a href="https://www.linkedin.com/in/eslam-elmasry-9b91b2185/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/eslam-elmasry-9b91b2185/"
+                  target="_blank"
+                >
                   <i class="fa-brands fa-linkedin"></i>
                 </a>
               </li>
