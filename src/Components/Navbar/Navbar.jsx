@@ -1,15 +1,15 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import AOS from 'aos'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import AOS from "aos";
 
 AOS.init();
 
-export default function Navbar({crrUser , clrUser}) {
+export default function Navbar({ crrUser, clrUser }) {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-transparent navbar-dark top-0 w-100">
         <div className="container-fluid">
-          <NavLink data-aos="fade-right" className="navbar-brand" to="rp">
+          <NavLink data-aos="fade-right" className="navbar-brand" to="pr">
             Noxe
           </NavLink>
           <button

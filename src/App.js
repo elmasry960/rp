@@ -59,10 +59,11 @@ function App() {
     <>
       <Navbar crrUser={currentUser} clrUser={clerUserData} />
       <Routes>
-        <Route path="rp" element={<Home />} />
+        <Route path="pr" element={<Home />} />
         <Route path="home" element={<Home />} />
         <Route
-          path="movies" title="Movie"
+          path="movies"
+          title="Movie"
           element={
             <TestingRoute>
               <Movies />{" "}
@@ -70,7 +71,8 @@ function App() {
           }
         />
         <Route
-          path="tv" title="Tv Show"
+          path="tv"
+          title="Tv Show"
           element={
             <TestingRoute>
               {" "}
