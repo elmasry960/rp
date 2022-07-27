@@ -27,6 +27,20 @@ h2 {
     -webkit-text-fill-color: transparent;
 }
 p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+input {
+  background-color: transparent !important;
+  color: white !important;
+}
+.navbar {
+  z-index: 9999;
+  position: fixed;
+  background-color: transparent;
+}
+.navbar-nav a , .navbar-nav a:hover {
+  color: white;
   text-decoration: none;
   font-size: 1.2rem;
 }
