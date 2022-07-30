@@ -7,6 +7,7 @@ import $ from 'jquery'
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import  './SliderHome.css'
 
 
@@ -30,9 +31,17 @@ export default function SliderHome() {
 
   return (
     <>
-      <Swiper className="mySwiper">
+      <Swiper
+        className="mySwiper"
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Pagination, Navigation]}
+      >
         {movies.map((movie, indx) => (
-          <SwiperSlide key={indx}
+          <SwiperSlide
+            key={indx}
             className="pt-5 SwiperSlide position-relative align-items-center"
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
