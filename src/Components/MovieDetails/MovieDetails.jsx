@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useEffect , useState } from 'react'
 import {useParams} from 'react-router-dom'
-import iframe from "react-iframe";
 import $ from 'jquery'
 import './MovieDetails.css'
 
@@ -11,8 +10,6 @@ export default function MovieDetails() {
   const paseImg = "https://image.tmdb.org/t/p/original/";
   const[trailer , setTrailer] = useState([]) 
   const [movieDetails , setMovieDetails] = useState({});
-  let trailerId ;
-
 
   async function getMovieDetails(){
 
@@ -22,28 +19,25 @@ export default function MovieDetails() {
   }
 
   async function getTrailer(){
-
     let { data } = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`);
-      
       setTrailer(data); 
-    
     }
     
     console.log(trailer);
 
     
     function openTrailer(){
-
       $(".layerTrailer").fadeToggle()(500);
       $(".layerTrailer").fadeToggle()(500);
-
     }
 
   useEffect(() => {
     getTrailer();
     getMovieDetails();
   }, []);
+
+  
   return (
     <>
       <div
@@ -134,13 +128,7 @@ export default function MovieDetails() {
                 >
                   {movieDetails.overview}
                 </p>
-                <button
-                  data-aos="fade-right"
-                  data-aos-duration="1000"
-                  data-aos-easing="ease-in"
-                  onClick={openTrailer}
-                  className="btn btn-outline-info"
-                >
+                <button onClick={openTrailer} className="btn btn-outline-info">
                   Watch Trailer
                 </button>
                 <div className="layerTrailer position-absolute top-0 bottom-0 start-0 end-0 ">
@@ -154,7 +142,11 @@ export default function MovieDetails() {
                     <iframe
                       width="900"
                       height="500"
-                      src={`https://www.youtube.com/embed/361743/${trailer.key}`}
+                      src={`https://www.youtube.com/embed/${
+                        trailer.results == undefined
+                          ? ""
+                          : trailer.results[0].key
+                      }?controls=1&rel=0&showinfo=0&color=white`}
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     ></iframe>

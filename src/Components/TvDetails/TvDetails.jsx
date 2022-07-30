@@ -1,25 +1,37 @@
 import axios from 'axios'
 import React, { useEffect , useState } from 'react'
 import {useParams} from 'react-router-dom'
+import $ from 'jquery'
 
 export default function TvDetails() {
 
   let paseImg = "https://image.tmdb.org/t/p/original/";
   let {id} = useParams()
+  const [trailer, setTrailer] = useState([]);
   const [tvDetails , setTvDetails] = useState({});
 
   async function getMovieDetails(){
 
     let {data} = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`)
-
     setTvDetails(data);
     document.title = `Tv ${data.name}`;
-
-
   }
+
+  function openTrailer() {
+    $(".layerTrailer").fadeToggle()(500);
+    $(".layerTrailer").fadeToggle()(500);
+  }
+
+   async function getTrailer() {
+     let { data } = await axios.get(
+       `https://api.themoviedb.org/3/tv/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`
+     );
+     setTrailer(data);
+   }
 
   useEffect( ()=>{
     getMovieDetails()
+    getTrailer()
 
   }, [] )
 
@@ -109,6 +121,30 @@ export default function TvDetails() {
                 >
                   {tvDetails.overview}
                 </p>
+                <button onClick={openTrailer} className="btn btn-outline-info">
+                  Watch Trailer
+                </button>
+                <div className="layerTrailer position-absolute top-0 bottom-0 start-0 end-0 ">
+                  <div className="d-flex justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0">
+                    <div
+                      onClick={openTrailer}
+                      className="position-absolute top-0 end-0 m-5 claseTrailer"
+                    >
+                      <i className="fa-solid fa-xmark fs-1"></i>
+                    </div>
+                    <iframe
+                      width="900"
+                      height="500"
+                      src={`https://www.youtube.com/embed/${
+                        trailer.results == undefined
+                          ? ""
+                          : trailer.results[5].key
+                      }?controls=1&rel=0&showinfo=0&color=white`}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

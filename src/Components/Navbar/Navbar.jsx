@@ -86,7 +86,7 @@ export default function Navbar({ crrUser, clrUser }) {
                   href="https://www.linkedin.com/in/eslam-elmasry-9b91b2185/"
                   target="_blank"
                 >
-                  <i class="fa-brands fa-linkedin"></i>
+                  <i className="fa-brands fa-linkedin"></i>
                 </a>
               </li>
               {crrUser ? (
