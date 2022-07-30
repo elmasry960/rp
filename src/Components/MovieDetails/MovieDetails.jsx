@@ -46,11 +46,9 @@ export default function MovieDetails() {
           backgroundImage: `url(${paseImg + movieDetails.backdrop_path})`,
         }}
       >
-        <div className="container pt-3">
+        <div className="container py-5">
           <div
-            className="row"
-            style={{ backgroundImage: "/src/footer-bg.jpg" }}
-          >
+            className="row">
             <div className="col-md-4">
               <figure>
                 <img

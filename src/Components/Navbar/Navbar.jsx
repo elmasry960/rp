@@ -1,17 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import AOS from "aos";
 
 AOS.init();
 
 export default function Navbar({ crrUser, clrUser }) {
+
+  
+
+
+
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-transparent navbar-dark top-0 w-100">
+      <nav className="navbar navbar-expand-lg navbar-dark position-fixed top-0 w-100 mb-5 p-2">
         <div className="container-fluid">
-          <NavLink data-aos="fade-right" className="navbar-brand" to="rp">
+          <Link data-aos="fade-right" className="navbar-brand" to="rp">
             Noxe
-          </NavLink>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -31,7 +37,12 @@ export default function Navbar({ crrUser, clrUser }) {
                   data-aos-duration="1000"
                   className="nav-item"
                 >
-                  <NavLink className="nav-link" aria-current="page" to="home">
+                  <NavLink
+                    data-text="Home"
+                    className="nav-link"
+                    aria-current="page"
+                    to="home"
+                  >
                     Home
                   </NavLink>
                 </li>
@@ -40,7 +51,12 @@ export default function Navbar({ crrUser, clrUser }) {
                   data-aos-duration="1500"
                   className="nav-item"
                 >
-                  <NavLink className="nav-link" aria-current="page" to="movies">
+                  <NavLink
+                    data-text="Movies"
+                    className="nav-link"
+                    aria-current="page"
+                    to="movies"
+                  >
                     Movies
                   </NavLink>
                 </li>
@@ -49,7 +65,12 @@ export default function Navbar({ crrUser, clrUser }) {
                   data-aos-duration="2000"
                   className="nav-item"
                 >
-                  <NavLink className="nav-link" aria-current="page" to="tv">
+                  <NavLink
+                    data-text="Tv Show"
+                    className="nav-link"
+                    aria-current="page"
+                    to="tv"
+                  >
                     Tv Show
                   </NavLink>
                 </li>

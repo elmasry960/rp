@@ -21,12 +21,13 @@
     "react-iframe": "^1.8.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" ,
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

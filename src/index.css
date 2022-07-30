@@ -88,3 +88,43 @@ input {
   -ms-transition: 50s background-color;
   -o-transition: 50s background-color;
 }
+
+.navbar {
+  border-bottom: 0.9px solid rgba(255, 255, 255, 0.36);
+}
+.active {
+  position: relative;
+}
+.active::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+.active::before {
+  content: '';
+  position: absolute;
+  margin: auto;
+  left: 0%;
+  right: 100%;
+  height: 5px;
+  background-color: rgba(48, 208, 208, 0.304);
+  top: 110%;
+    animation: activeborder 0.8s ease-in-out alternate forwards;
+      -webkit-animation: activeborder 0.8s ease-in-out alternate forwards;
+}
+
+@keyframes activeborder {
+
+  0% {
+    left: 0%;
+    right: 100%;
+  }
+
+  100% {
+    left: 0%;
+    right: 0%;
+  }
+
+}

@@ -27,8 +27,10 @@ export default function TvDetails() {
       `https://api.themoviedb.org/3/tv/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`
     );
     setTrailer(data);
-  }
 
+  }
+  console.log(trailer)
+  
   useEffect(() => {
     getMovieDetails();
     getTrailer();
@@ -41,7 +43,7 @@ export default function TvDetails() {
           backgroundImage: `url(${paseImg + tvDetails.backdrop_path})`,
         }}
       >
-        <div className="container mt-3 text-white">
+        <div className="container py-5 text-white">
           <div className="row">
             <div className="col-md-4">
               <figure>
@@ -135,7 +137,7 @@ export default function TvDetails() {
                       src={`https://www.youtube.com/embed/${
                         trailer.results == undefined
                           ? ""
-                          : trailer.results[5].key
+                          : trailer.results[0].key
                       }?controls=1&rel=0&showinfo=0&color=white`}
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

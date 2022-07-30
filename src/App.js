@@ -15,9 +15,28 @@ import TvDetails from './Components/TvDetails/TvDetails';
 import jwtDecode from 'jwt-decode';
 import { useState, useEffect } from "react";
 import AOS from 'aos'
+import SliderHome from './Components/SliderHome/SliderHome';
+import $ from 'jquery'
 
 
 function App() {
+
+
+  $(window).scroll( function(){
+
+    if (  $(window).scrollTop() > 600){
+      $("nav").css("backgroundColor", "rgba(0, 0, 0, 0.8)");
+    }
+    else{
+      $("nav").css("backgroundColor", "transparent");
+    }
+
+  } )
+
+
+
+
+
   const navgate = useNavigate();
   const [currentUser , setCurrentUser] = useState(null)
 
@@ -30,7 +49,6 @@ function App() {
       return props.children;
     }
   }
-
 
   function decodeToken(){
     let user = jwtDecode( localStorage.getItem("tkn") )

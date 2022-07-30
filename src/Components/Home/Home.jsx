@@ -1,6 +1,7 @@
 import React, { useEffect , useState } from 'react'
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
+import SliderHome from '../SliderHome/SliderHome';
 
 
 
@@ -25,9 +26,8 @@ export default function Home() {
   },[])
 
 
-
-
   return <>
+  <SliderHome />
 
   {movies.length > 0 && tvShow.length > 0?<>
       <div className='container py-5'>
