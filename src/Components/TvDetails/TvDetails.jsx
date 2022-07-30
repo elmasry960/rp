@@ -1,18 +1,18 @@
-import axios from 'axios'
-import React, { useEffect , useState } from 'react'
-import {useParams} from 'react-router-dom'
-import $ from 'jquery'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import $ from "jquery";
 
 export default function TvDetails() {
-
   let paseImg = "https://image.tmdb.org/t/p/original/";
-  let {id} = useParams()
+  let { id } = useParams();
   const [trailer, setTrailer] = useState([]);
-  const [tvDetails , setTvDetails] = useState({});
+  const [tvDetails, setTvDetails] = useState({});
 
-  async function getMovieDetails(){
-
-    let {data} = await axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`)
+  async function getMovieDetails() {
+    let { data } = await axios.get(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`
+    );
     setTvDetails(data);
     document.title = `Tv ${data.name}`;
   }
@@ -22,20 +22,17 @@ export default function TvDetails() {
     $(".layerTrailer").fadeToggle()(500);
   }
 
-   async function getTrailer() {
-     let { data } = await axios.get(
-       `https://api.themoviedb.org/3/tv/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`
-     );
-     setTrailer(data);
-   }
+  async function getTrailer() {
+    let { data } = await axios.get(
+      `https://api.themoviedb.org/3/tv/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`
+    );
+    setTrailer(data);
+  }
 
-  useEffect( ()=>{
-    getMovieDetails()
-    getTrailer()
-
-  }, [] )
-
-
+  useEffect(() => {
+    getMovieDetails();
+    getTrailer();
+  }, [])
   return (
     <>
       <div
@@ -152,5 +149,4 @@ export default function TvDetails() {
       </div>
     </>
   );
-  
 }
