@@ -24,7 +24,7 @@ function App() {
 
   $(window).scroll( function(){
 
-    if (  $(window).scrollTop() > 600){
+    if (  $(window).scrollTop() > 200){
       $("nav").css("backgroundColor", "rgba(0, 0, 0, 0.8)");
     }
     else{

@@ -47,82 +47,28 @@ export default function TvDetails() {
           <div className="row">
             <div className="col-md-4">
               <figure>
-                <img
-                  className="w-100"
-                  src={`https://image.tmdb.org/t/p/w500/${tvDetails.poster_path}`}
-                />
+                <img className="w-100" src={`https://image.tmdb.org/t/p/w500/${tvDetails.poster_path}`} />
               </figure>
             </div>
             <div className="col-md-8 mt-5">
               <div className="item">
-                <h2
-                  data-aos="fade-down"
-                  data-aos-duration="2000"
-                  data-aos-easing="ease-in"
-                >
-                  {tvDetails.name}
-                </h2>
-                <h4
-                  data-aos="fade-down"
-                  data-aos-duration="1500"
-                  data-aos-easing="ease-in"
-                  className="pt-1"
-                >
-                  {tvDetails.tagline}
-                </h4>
+                <h2 data-aos="fade-down" data-aos-duration="2000" data-aos-easing="ease-in" > {tvDetails.name} </h2>
+                <h4 data-aos="fade-down" data-aos-duration="1500" data-aos-easing="ease-in" className="pt-1" > {tvDetails.tagline} </h4>
                 <div className="mt-3">
                   {tvDetails.genres?.map((genre, idx) => (
-                    <span
-                      data-aos="fade-down"
-                      data-aos-duration="1300"
-                      data-aos-easing="ease-in"
-                      className="bg-info text-white p-1 ms-2"
-                      key={idx}
-                    >
-                      {genre.name}{" "}
-                    </span>
+                    <span data-aos="fade-down" data-aos-duration="1300" data-aos-easing="ease-in" className="bg-info text-white p-1 ms-2" key={idx} >{genre.name}{" "} </span>
                   ))}
                 </div>
                 <div className="py-5 px-2">
-                  <p
-                    data-aos="fade-right"
-                    data-aos-duration="400"
-                    data-aos-easing="ease-in"
-                  >
+                  <p data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in" >
                     Vota: {tvDetails.vote_average}
                   </p>
-                  <p
-                    data-aos="fade-right"
-                    data-aos-duration="400"
-                    data-aos-easing="ease-in"
-                  >
-                    Vota Count: {tvDetails.vote_count}
-                  </p>
-                  <p
-                    data-aos="fade-right"
-                    data-aos-duration="400"
-                    data-aos-easing="ease-in"
-                  >
-                    Popularity: {tvDetails.popularity}
-                  </p>
-                  <p
-                    data-aos="fade-right"
-                    data-aos-duration="400"
-                    data-aos-easing="ease-in"
-                  >
-                    Release Date: {tvDetails.release_date}
-                  </p>
+                  <p data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in" > Vota Count: {tvDetails.vote_count} </p>
+                  <p data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in" > Popularity: {tvDetails.popularity} </p>
+                  <p data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in" > Release Date: {tvDetails.release_date} </p>
                 </div>
-                <p
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                  data-aos-easing="ease-in"
-                >
-                  {tvDetails.overview}
-                </p>
-                <button onClick={openTrailer} className="btn btn-outline-info">
-                  Watch Trailer
-                </button>
+                <p data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-in" > {tvDetails.overview} </p>
+                <button onClick={openTrailer} className="btn btn-outline-info"> Watch Trailer </button>
                 <div className="layerTrailer position-absolute top-0 bottom-0 start-0 end-0 ">
                   <div className="d-flex justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0">
                     <div
@@ -131,17 +77,8 @@ export default function TvDetails() {
                     >
                       <i className="fa-solid fa-xmark fs-1"></i>
                     </div>
-                    <iframe
-                      width="900"
-                      height="500"
-                      src={`https://www.youtube.com/embed/${
-                        trailer.results == undefined
-                          ? ""
-                          : trailer.results[0].key
-                      }?controls=1&rel=0&showinfo=0&color=white`}
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    ></iframe>
+                    <iframe width="900" height="500" src={`https://www.youtube.com/embed/${ trailer.results == undefined ? "" : trailer.results[0].key}?controls=1&rel=0&showinfo=0&color=white`}
+                      title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                   </div>
                 </div>
               </div>

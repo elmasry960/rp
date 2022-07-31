@@ -70,58 +70,19 @@ export default function Login({ decodeToken }) {
               </div>
             </>
           ))}
-          {register.length == 0 ? (
+          {register.length === 0 ? (
             ""
           ) : (
             <div className="alert alert-danger">{register}</div>
           )}
-          <label
-            data-aos="zoom-in"
-            data-aos-duration="1500"
-            className="my-2"
-            htmlFor="email"
-          >
-            Email
-          </label>
-          <input
-            data-aos="zoom-in"
-            data-aos-duration="1500"
-            onChange={getUser}
-            className="form-control"
-            placeholder="Email"
-            type="text"
-            id="email"
-          />
+          <label data-aos="zoom-in" data-aos-duration="1500" className="my-2" htmlFor="email">Email</label>
+          <input data-aos="zoom-in" data-aos-duration="1500" onChange={getUser} className="form-control" placeholder="Email" type="text" id="email"/>
+          
+          <label data-aos="zoom-in" data-aos-duration="2000" className="my-2" htmlFor="password">Password</label>
+          <input data-aos="zoom-in" data-aos-duration="2000" onChange={getUser} className="form-control" placeholder="Password" type="password" id="password"/>
 
-          <label
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-            className="my-2"
-            htmlFor="password"
-          >
-            Password
-          </label>
-          <input
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-            onChange={getUser}
-            className="form-control"
-            placeholder="Password"
-            type="password"
-            id="password"
-          />
-
-          <button
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
-            data-aos-duration="2500"
-            className="btn btn-outline-info mt-3"
-          >
-            {loginFlag ? (
-              <i className="fa-solid fa-spinner fa-spin"></i>
-            ) : (
-              "Login"
-            )}
+          <button data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2500" className="btn btn-outline-info mt-3" >
+            {loginFlag ? <i className="fa-solid fa-spinner fa-spin"></i> : "Login"}
           </button>
         </form>
       </div>

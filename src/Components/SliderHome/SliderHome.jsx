@@ -31,38 +31,23 @@ export default function SliderHome() {
 
   return (
     <>
-      <Swiper
-        className="mySwiper"
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Pagination, Navigation]}
-      >
+      <Swiper className="mySwiper" autoplay={{ delay: 2500, disableOnInteraction: false, }} modules={[Autoplay, Pagination, Navigation]}>
         {movies.map((movie, indx) => (
           <SwiperSlide
-            key={indx}
-            className="pt-5 SwiperSlide position-relative align-items-center"
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
-            }}
-          >
-            <div className="container d-flex h-100 align-items-center">
+            key={indx} className="pt-5 SwiperSlide position-relative align-items-center" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,  }}>
+            <div className="container slide-home d-flex h-100 align-items-center">
               <div className="row">
+                <div className="col-md-4">
+                  <img className="w-75" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+                </div>
                 <div className="col-md-8 align-self-center">
                   <h1>{movie.original_title}</h1>
                   <p>{movie.overview}</p>
                   <Link to={`/moviemetails/${movie.id}`}>
-                    <button className="btn rounded-pill btn-outline-info mt-5 px-4">
+                    <button className="btn rounded-pill btn-outline-info mt-3 px-4">
                       Watch Now
                     </button>
                   </Link>
-                </div>
-                <div className="col-md-4">
-                  <img
-                    className="w-75"
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                  />
                 </div>
               </div>
             </div>
