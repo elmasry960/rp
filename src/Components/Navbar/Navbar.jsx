@@ -56,7 +56,7 @@ export default function Navbar({ crrUser, clrUser }) {
                 </li>
               </div>
               {crrUser ? (
-                <li className="nav-item">
+                <li className="nav-item li-logout">
                   <span onClick={clrUser} className="nav-link logout text-dec" aria-current="page" to="home">Logout</span>
                 </li>
               ) : (

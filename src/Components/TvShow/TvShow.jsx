@@ -1,22 +1,10 @@
-import Axios from 'axios'
-import React, { useEffect , useState } from 'react'
+import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
-import AOS from 'aos'
+import { ApiContext } from '../../Context/ApiContext'
 
 export default function TvShow() {
-  let [tvShow , getTv] = useState([]);
 
-  async function getTrendingTv(){
-    let {data} = await Axios.get("https://api.themoviedb.org/3/trending/tv/week?api_key=eba8b9a7199efdcb0ca1f96879b83c44")
-    getTv(data.results)
-    document.title = "Tv Show";
-
-  }
-
-  useEffect(()=>{
-    getTrendingTv()
-    AOS.init();
-  },[])
+  const {tvShow} = useContext(ApiContext)
 
   return <>
 

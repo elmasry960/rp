@@ -3,6 +3,7 @@ import Joi from "joi";
 import axios from 'axios';
 import $ from 'jquery'
 import { useNavigate } from 'react-router-dom'
+import '../Login/login.css'
 
 export default function Register() {
 
@@ -64,8 +65,7 @@ export default function Register() {
   return <>
   
   <div className='position-absolute mt-5 top-0 end-0 bottom-0 start-0 w-100 d-flex justify-content-center align-items-center '>
-    <form className='w-50 m-auto mt-3' onSubmit={subitForm}>
-
+    <form className='m-auto mt-5' onSubmit={subitForm}>
     {errorList.map((error , index)=> <>
         <div key={index} className='alert alert-danger'>{error.message}</div>
       </>)}

@@ -15,8 +15,8 @@ import TvDetails from './Components/TvDetails/TvDetails';
 import jwtDecode from 'jwt-decode';
 import { useState, useEffect } from "react";
 import AOS from 'aos'
-import SliderHome from './Components/SliderHome/SliderHome';
 import $ from 'jquery'
+import { ApiContextFuntion } from './Context/ApiContext';
 
 
 function App() {
@@ -76,62 +76,65 @@ function App() {
   return (
     <>
       <Navbar crrUser={currentUser} clrUser={clerUserData} />
-      <Routes>
-        <Route path="rp" element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route
-          path="movies"
-          title="Movie"
-          element={
-            <TestingRoute>
-              <Movies />{" "}
-            </TestingRoute>
-          }
-        />
-        <Route
-          path="tv"
-          title="Tv Show"
-          element={
-            <TestingRoute>
-              {" "}
-              <TvShow />{" "}
-            </TestingRoute>
-          }
-        />
-        <Route
-          path="/tvdetails"
-          element={
-            <TestingRoute>
-              {" "}
-              <TvDetails />{" "}
-            </TestingRoute>
-          }
-        >
-          <Route path=":id" element={<TvDetails />} />
-        </Route>
 
-        <Route
-          path="/moviemetails"
-          element={
-            <TestingRoute>
-              {" "}
-              <MovieDetails />{" "}
-            </TestingRoute>
-          }
-        >
+      <ApiContextFuntion>
+        <Routes>
+          <Route path="rp" element={<Home />} />
+          <Route path="home" element={<Home />} />
           <Route
-            path=":id"
+            path="movies"
+            title="Movie"
+            element={
+              <TestingRoute>
+                <Movies />{" "}
+              </TestingRoute>
+            }
+          />
+          <Route
+            path="tv"
+            title="Tv Show"
+            element={
+              <TestingRoute>
+                {" "}
+                <TvShow />{" "}
+              </TestingRoute>
+            }
+          />
+          <Route
+            path="/tvdetails"
+            element={
+              <TestingRoute>
+                {" "}
+                <TvDetails />{" "}
+              </TestingRoute>
+            }
+          >
+            <Route path=":id" element={<TvDetails />} />
+          </Route>
+
+          <Route
+            path="/moviemetails"
             element={
               <TestingRoute>
                 {" "}
                 <MovieDetails />{" "}
               </TestingRoute>
             }
-          />
-        </Route>
-        <Route path="login" element={<Login decodeToken={decodeToken} />} />
-        <Route path="register" element={<Register />} />
-      </Routes>
+          >
+            <Route
+              path=":id"
+              element={
+                <TestingRoute>
+                  {" "}
+                  <MovieDetails />{" "}
+                </TestingRoute>
+              }
+            />
+          </Route>
+          <Route path="login" element={<Login decodeToken={decodeToken} />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+      </ApiContextFuntion>
     </>
   );
 }

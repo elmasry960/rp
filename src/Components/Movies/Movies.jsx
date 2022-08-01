@@ -1,22 +1,12 @@
-import Axios from 'axios'
-import React, { useEffect , useState } from 'react'
+import React, {  useContext } from 'react'
 import { Link } from 'react-router-dom'
-import AOS from 'aos'
+
+import { ApiContext } from '../../Context/ApiContext'
 
 export default function Movies() {
-    let [movies , getMovies] = useState([]);
-  async function getTrendingMovie(){
 
-    let {data} = await Axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=eba8b9a7199efdcb0ca1f96879b83c44")
-    getMovies(data.results);
-    document.title = "Movie";
+    const {movies} = useContext(ApiContext)
 
-  }
-
-  useEffect(()=>{
-    getTrendingMovie();
-    AOS.init();
-  },[])
 
   return <>
 

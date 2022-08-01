@@ -1,30 +1,14 @@
-import React, { useEffect , useState } from 'react'
+import React, { useContext, useEffect , useState } from 'react'
 import Axios from 'axios'
 import {Link} from 'react-router-dom'
 import SliderHome from '../SliderHome/SliderHome';
+import { ApiContext } from '../../Context/ApiContext';
 
 
 
 export default function Home() {
-  let [movies , getMovies] = useState([]);
-  let [tvShow , getTv] = useState([]);
-  async function getTrendingMovie(){
 
-    let {data} = await Axios.get("https://api.themoviedb.org/3/trending/movie/week?api_key=eba8b9a7199efdcb0ca1f96879b83c44")
-    getMovies(data.results)
-  }
-  async function getTrendingTv(){
-
-    let {data} = await Axios.get("https://api.themoviedb.org/3/trending/tv/week?api_key=eba8b9a7199efdcb0ca1f96879b83c44")
-    getTv(data.results)
-  }
-
-  useEffect(()=>{
-    getTrendingMovie()
-    getTrendingTv()
-    
-  },[])
-
+  const {movies , tvShow} = useContext(ApiContext);
 
   return <>
   <SliderHome />

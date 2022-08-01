@@ -3,6 +3,7 @@ import Joi from "joi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
+import './login.css'
 AOS.init();
 
 export default function Login({ decodeToken }) {
@@ -62,7 +63,7 @@ export default function Login({ decodeToken }) {
   return (
     <>
       <div className="position-absolute top-0 end-0 bottom-0 start-0 w-100 d-flex justify-content-center align-items-center ">
-        <form className="w-50 m-auto" onSubmit={subitForm}>
+        <form className="m-auto" onSubmit={subitForm}>
           {errorList.map((error, index) => (
             <>
               <div key={index} className="alert alert-danger">
