@@ -17,10 +17,10 @@ import { useState, useEffect } from "react";
 import AOS from 'aos'
 import $ from 'jquery'
 import { ApiContextFuntion } from './Context/ApiContext';
+import NotFound from './Components/NotFound/NotFound';
 
 
 function App() {
-
 
   $(window).scroll( function(){
 
@@ -32,9 +32,6 @@ function App() {
     }
 
   } )
-
-
-
 
 
   const navgate = useNavigate();
@@ -81,60 +78,20 @@ function App() {
         <Routes>
           <Route path="rp" element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route
-            path="movies"
-            title="Movie"
-            element={
-              <TestingRoute>
-                <Movies />{" "}
-              </TestingRoute>
-            }
-          />
-          <Route
-            path="tv"
-            title="Tv Show"
-            element={
-              <TestingRoute>
-                {" "}
-                <TvShow />{" "}
-              </TestingRoute>
-            }
-          />
-          <Route
-            path="/tvdetails"
-            element={
-              <TestingRoute>
-                {" "}
-                <TvDetails />{" "}
-              </TestingRoute>
-            }
-          >
-            <Route path=":id" element={<TvDetails />} />
-          </Route>
+          <Route path="movies" title="Movie" element={ <TestingRoute> <Movies /> </TestingRoute> } />
+          <Route path="tv" title="Tv Show" element={ <TestingRoute> <TvShow /> </TestingRoute> } />
+          <Route path="/tvdetails" element={ <TestingRoute> <TvDetails />  </TestingRoute> } >
+          <Route path=":id" element={<TvDetails />} /> </Route>
 
-          <Route
-            path="/moviemetails"
-            element={
-              <TestingRoute>
-                {" "}
-                <MovieDetails />{" "}
-              </TestingRoute>
-            }
-          >
-            <Route
-              path=":id"
-              element={
-                <TestingRoute>
-                  {" "}
-                  <MovieDetails />{" "}
-                </TestingRoute>
-              }
-            />
+          <Route path="/moviemetails" element={ <TestingRoute> <MovieDetails /> </TestingRoute> } >
+            <Route path=":id" element={ <TestingRoute> <MovieDetails /> </TestingRoute>  } /> 
           </Route>
           <Route path="login" element={<Login decodeToken={decodeToken} />} />
           <Route path="register" element={<Register />} />
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
       </ApiContextFuntion>
+      
     </>
   );
 }

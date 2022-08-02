@@ -3,6 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+ background-attachment: fixed; 
 
 }
 .movieDetails , .movieDetails img , .movieDetails h2 , .movieDetails h4 , .movieDetails p , span , button {

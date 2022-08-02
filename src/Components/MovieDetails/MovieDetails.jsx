@@ -17,6 +17,7 @@ export default function MovieDetails() {
     setMovieDetails(data);
   }
 
+
   // Git ID Trailer
   async function getTrailer(){
     let { data } = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=eba8b9a7199efdcb0ca1f96879b83c44&language=en-US`);
@@ -70,6 +71,7 @@ export default function MovieDetails() {
                 </div>
                 <p data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-in" > {movieDetails.overview} </p>
                 <button onClick={openTrailer} className="btn btn-outline-info"> Watch Trailer </button>
+
                 <div className="layerTrailer position-absolute top-0 bottom-0 start-0 end-0 ">
                   <div className="d-flex justify-content-center align-items-center position-absolute top-0 bottom-0 start-0 end-0">
                     <div

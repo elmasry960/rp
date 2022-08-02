@@ -2,6 +2,7 @@ import React, {  useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 import { ApiContext } from '../../Context/ApiContext'
+import SliderHome from './../SliderHome/SliderHome';
 
 export default function Movies() {
 
@@ -9,7 +10,7 @@ export default function Movies() {
 
 
   return <>
-
+  <SliderHome/>
   <div className='container py-5'>
     <div className='row py-5'>
       <div className='col-md-4 d-flex align-items-center' data-aos="fade-right">

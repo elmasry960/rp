@@ -26,6 +26,6 @@ export function ApiContextFuntion(props){
 
   return <ApiContext.Provider value={{ movies: movies , tvShow: tvShow }}>
             {props.children}
-        </ApiContext.Provider>
+          </ApiContext.Provider>
 
 }
