@@ -57,7 +57,7 @@ export default function MovieDetails() {
                 <h4 data-aos="fade-down" data-aos-duration="700" data-aos-easing="ease-in" > {movieDetails.tagline} </h4>
                 <div className="mt-3">
                   {movieDetails.genres?.map((genre, idx) => (
-                    <span data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in" className="p-1 ms-2"  key={idx} > {genre.name}{" "}</span>))}
+                    <span data-aos="fade-down" data-aos-duration="10s00" data-aos-easing="ease-in" className="p-1 ms-2"  key={idx} > {genre.name}{" "}</span>))}
                 </div>
                 <div className="py-3 px-2">
                   <p data-aos="fade-right" data-aos-duration="400" data-aos-easing="ease-in" >

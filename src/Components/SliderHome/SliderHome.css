@@ -5,6 +5,7 @@
 }
 .layer-slaid {
   background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to top,#131722 , transparent) ;
 }
 
  img {

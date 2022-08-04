@@ -10,7 +10,7 @@ export default function TvShow() {
 
   return <>
   <SliderTv />
-  <div className='container py-5'>
+  <div className='container linear py-5'>
     <div className='row py-5'>
       <div className='col-lg-4 col-md-5 d-flex align-items-center' data-aos="fade-right">
         <div className='title position-relative'>

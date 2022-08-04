@@ -88,4 +88,6 @@ input {
   -ms-transition: 50s background-color;
   -o-transition: 50s background-color;
 }
-
+/* .linear{
+  position: relative;
+} */
