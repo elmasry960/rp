@@ -46,7 +46,7 @@ export default function SliderTv() {
                 <div className="col-md-8 align-self-center">
                   <h1>{tv.original_name}</h1>
                   <p>{tv.overview}</p>
-                  <Link to={`/moviemetails/${tv.id}`}>
+                  <Link to={`/tvdetails/${tv.id}`}>
                     <button className="btn rounded-pill btn-outline-info mt-3 px-4">
                       Watch Now
                     </button>

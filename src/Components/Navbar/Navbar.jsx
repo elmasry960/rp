@@ -17,17 +17,17 @@ export default function Navbar({ crrUser, clrUser }) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {crrUser ? (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li data-aos="fade-down" data-aos-duration="1000" className="nav-item">
+                <li data-aos="fade-down" data-aos-duration="800" className="nav-item">
                   <NavLink data-text="Home" className="nav-link" aria-current="page" to="home" >
                     Home
                   </NavLink>
                 </li>
-                <li data-aos="fade-down" data-aos-duration="1500" className="nav-item" >
+                <li data-aos="fade-down" data-aos-duration="900" className="nav-item" >
                   <NavLink data-text="Movies" className="nav-link" aria-current="page" to="movies" >
                     Movies
                   </NavLink>
                 </li>
-                <li data-aos="fade-down" data-aos-duration="2000" className="nav-item" >
+                <li data-aos="fade-down" data-aos-duration="1000" className="nav-item" >
                   <NavLink data-text="Tv Show" className="nav-link" aria-current="page" to="tv" >
                     Tv Show
                   </NavLink>
@@ -39,17 +39,17 @@ export default function Navbar({ crrUser, clrUser }) {
 
             <ul className="icons d-flex ms-auto mb-2 mb-lg-0 text-white overflow-hidden">
               <div className="icons-Nav">
-                <li data-aos="fade-down" data-aos-duration="1000" className="nav-item mx-2" >
+                <li data-aos="fade-down" data-aos-duration="800" className="nav-item mx-2" >
                   <a href="https://www.facebook.com/elmasry966" target="_blank">
                     <i className="fa-brands fa-facebook"></i>
                   </a>
                 </li>
-                <li data-aos="fade-down" data-aos-duration="1500" className="nav-item mx-2">
+                <li data-aos="fade-down" data-aos-duration="1000" className="nav-item mx-2">
                   <a href="https://www.instagram.com/eelmasry960" target="_blank" >
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </li>
-                <li data-aos="fade-down" data-aos-duration="2000" className="nav-item mx-2" >
+                <li data-aos="fade-down" data-aos-duration="1200" className="nav-item mx-2" >
                   <a href="https://www.linkedin.com/in/eslam-elmasry-9b91b2185/" target="_blank" >
                     <i className="fa-brands fa-linkedin"></i>
                   </a>

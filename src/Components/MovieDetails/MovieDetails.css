@@ -66,3 +66,23 @@ p , .item h4 {
 .container span {
   background: linear-gradient(to right, #30d0d078 0%, #33086783 100%);
 }
+.btn-outline-info  {
+  position: relative;
+  z-index: 999;
+}
+#exampleModalToggle {
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.429);
+}
+.modal-backdrop {
+  z-index: 99 !important;
+}
+.btn-close {
+  border: unset !important;
+}
+.modal-content{
+  background-color: transparent;
+}
+.modal-header {
+  border: unset;
+}

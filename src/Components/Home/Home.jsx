@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       
     {movies.map((movie , indx)=> <div key={indx} className='col-lg-2 col-md-3 col-sm-6 mb-3' data-aos="fade-up"
-       data-aos-duration="3000">
+       data-aos-duration="1500">
           <Link className='text-decoration-none' to={`/moviemetails/${movie.id}`}>
         <div className='item'>
           <figure>
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
       {tvShow.map((tv , indx)=> <div key={indx} className='col-md-2 mb-3' data-aos="fade-up"
-     data-aos-duration="3000">
+     data-aos-duration="1500">
         <Link className='text-decoration-none' to={`/tvdetails/${tv.id}`}>
           <div className='item'>
           <figure>
